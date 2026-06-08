@@ -1,0 +1,118 @@
+.footer {
+  background-color: var(--bg-secondary);
+  padding-top: var(--spacing-16);
+  margin-top: var(--spacing-16);
+  border-top: 1px solid var(--border-color);
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--spacing-8);
+  margin-bottom: var(--spacing-12);
+}
+
+@media (min-width: 640px) {
+  .footerGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footerGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+  display: block;
+  margin-bottom: var(--spacing-4);
+}
+
+.logo span {
+  color: var(--text-main);
+}
+
+.description {
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-6);
+  line-height: 1.6;
+}
+
+.socialLinks {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.socialLinks a {
+  color: var(--primary-color);
+  background-color: var(--primary-light);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.socialLinks a:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.footerTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-6);
+  color: var(--text-main);
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.footerLinks a {
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.footerLinks a:hover {
+  color: var(--primary-color);
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.contactList li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  color: var(--text-muted);
+}
+
+.contactList li svg {
+  color: var(--primary-color);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.footerBottom {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-4) 0;
+  text-align: center;
+}
+
+.footerBottom p {
+  opacity: 0.9;
+}

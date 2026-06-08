@@ -1,0 +1,118 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id            String   @id @default(cuid())
+  name          String
+  email         String   @unique
+  password_hash String
+  role          String   @default("Admin")
+  status        String   @default("Active")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Department {
+  id                String        @id @default(cuid())
+  name              String
+  slug              String        @unique
+  short_description String?
+  full_description  String?
+  image             String?
+  status            String        @default("Active")
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+  doctors           Doctor[]
+  appointments      Appointment[]
+}
+
+model Doctor {
+  id               String        @id @default(cuid())
+  name             String
+  photo            String?
+  specialization   String
+  department_id    String
+  department       Department    @relation(fields: [department_id], references: [id])
+  qualification    String?
+  experience       String?
+  bio              String?
+  phone            String?
+  email            String?
+  consultation_fee Float?
+  available_days   String?       // JSON stringified array
+  time_slots       String?       // JSON stringified array
+  status           String        @default("Active")
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  appointments     Appointment[]
+}
+
+model Appointment {
+  id               String     @id @default(cuid())
+  appointment_code String     @unique
+  patient_name     String
+  phone            String
+  email            String?
+  age              Int?
+  gender           String?
+  department_id    String
+  department       Department @relation(fields: [department_id], references: [id])
+  doctor_id        String
+  doctor           Doctor     @relation(fields: [doctor_id], references: [id])
+  appointment_date DateTime
+  appointment_time String
+  appointment_type String     @default("Offline")
+  symptoms         String?
+  status           String     @default("Pending")
+  admin_notes      String?
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+}
+
+model Service {
+  id                String   @id @default(cuid())
+  title             String
+  slug              String   @unique
+  image             String?
+  short_description String?
+  full_description  String?
+  status            String   @default("Active")
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model HealthPackage {
+  id             String   @id @default(cuid())
+  name           String
+  price          Float
+  description    String?
+  included_tests String?  // JSON stringified array
+  status         String   @default("Active")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Settings {
+  id              String   @id @default(cuid())
+  hospital_name   String   @default("Hospital Management")
+  logo            String?
+  address         String?
+  phone           String?
+  emergency_phone String?
+  email           String?
+  opening_hours   String?
+  map_link        String?
+  facebook        String?
+  instagram       String?
+  twitter         String?
+  linkedin        String?
+  footer_text     String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}

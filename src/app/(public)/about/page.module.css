@@ -1,0 +1,139 @@
+.pageHeader {
+  background-color: var(--primary-light);
+  padding: var(--spacing-12) 0;
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.pageHeader h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-2);
+}
+
+@media (min-width: 768px) {
+  .pageHeader h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.pageHeader p {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+}
+
+.introSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-8);
+  margin-bottom: var(--spacing-16);
+}
+
+@media (min-width: 768px) {
+  .introSection {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+.introContent h2 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-4);
+  color: var(--text-main);
+}
+
+.introContent p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-4);
+}
+
+.introImage {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  height: 400px;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 1.25rem;
+}
+
+.missionVision {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-16);
+}
+
+@media (min-width: 768px) {
+  .missionVision {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.mvCard {
+  background-color: var(--bg-secondary);
+  padding: var(--spacing-8);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.mvIcon {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-4);
+}
+
+.mvCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-4);
+  color: var(--text-main);
+}
+
+.mvCard p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.whyChooseUs {
+  margin-bottom: var(--spacing-16);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--spacing-6);
+}
+
+@media (min-width: 640px) {
+  .featuresGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.featureItem {
+  text-align: center;
+  padding: var(--spacing-6);
+}
+
+.featureItem svg {
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-4);
+}
+
+.featureItem h4 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-2);
+}
+
+.featureItem p {
+  color: var(--text-muted);
+}

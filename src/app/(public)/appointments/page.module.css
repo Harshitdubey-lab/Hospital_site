@@ -1,0 +1,128 @@
+.pageHeader {
+  background-color: var(--primary-light);
+  padding: var(--spacing-12) 0;
+  text-align: center;
+  margin-bottom: var(--spacing-12);
+}
+
+.pageHeader h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-2);
+}
+
+.pageHeader p {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+}
+
+.formContainer {
+  max-width: 800px;
+  margin: 0 auto var(--spacing-16);
+  background-color: var(--bg-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-8);
+  border: 1px solid var(--border-color);
+}
+
+.formSection {
+  margin-bottom: var(--spacing-8);
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  color: var(--primary-dark);
+  margin-bottom: var(--spacing-4);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 2px solid var(--primary-light);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-4);
+}
+
+@media (min-width: 640px) {
+  .grid2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.submitSection {
+  text-align: center;
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-8);
+  border-top: 1px solid var(--border-color);
+}
+
+.submitSection button {
+  width: 100%;
+  max-width: 300px;
+  font-size: 1.125rem;
+  padding: var(--spacing-3) var(--spacing-6);
+}
+
+/* Success State */
+.successContainer {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-8);
+  background-color: var(--bg-secondary);
+}
+
+.successCard {
+  background-color: var(--bg-color);
+  padding: var(--spacing-12);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.successIcon {
+  color: var(--success-color);
+  margin-bottom: var(--spacing-4);
+}
+
+.successCard h2 {
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing-2);
+  color: var(--text-main);
+}
+
+.appointmentCodeBox {
+  background-color: var(--primary-light);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-6) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.appointmentCodeBox span {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.appointmentCodeBox strong {
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+  letter-spacing: 2px;
+}
+
+.successNote {
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-8);
+  font-size: 0.875rem;
+}

@@ -1,0 +1,149 @@
+.pageHeader {
+  background-color: var(--primary-light);
+  padding: var(--spacing-12) 0;
+  text-align: center;
+  margin-bottom: var(--spacing-12);
+}
+
+.pageHeader h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-2);
+}
+
+@media (min-width: 768px) {
+  .pageHeader h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.pageHeader p {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+}
+
+.mainContent {
+  margin-bottom: var(--spacing-16);
+}
+
+.loading {
+  text-align: center;
+  padding: var(--spacing-12);
+  color: var(--text-muted);
+  font-size: 1.125rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--spacing-8);
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-5px);
+}
+
+.cardHeader {
+  padding: var(--spacing-8) var(--spacing-6);
+  background-color: var(--bg-secondary);
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.icon {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-4);
+}
+
+.cardHeader h3 {
+  font-size: 1.5rem;
+  color: var(--text-main);
+  margin-bottom: var(--spacing-4);
+}
+
+.price {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-4);
+}
+
+.currency {
+  font-size: 1.5rem;
+  vertical-align: top;
+  font-weight: 600;
+}
+
+.amount {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.description {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.cardBody {
+  padding: var(--spacing-6);
+  flex: 1;
+}
+
+.cardBody h4 {
+  font-size: 1rem;
+  color: var(--text-main);
+  margin-bottom: var(--spacing-4);
+}
+
+.testList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.testList li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-2);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.checkIcon {
+  color: var(--success-color);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cardFooter {
+  padding: var(--spacing-6);
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+}
+
+.cardFooter .btn {
+  width: 100%;
+}
