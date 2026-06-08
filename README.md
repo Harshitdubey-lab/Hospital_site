@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CityCare Hospital Management System
 
-## Getting Started
+A modern, responsive full-stack Hospital Management Website and Admin Panel built with Next.js, standard CSS modules, and MongoDB.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Public Website:**
+- Responsive Home Page with premium aesthetics (Medical theme: Blue, White, Green)
+- Find a Doctor (Search & Filter by Department)
+- Department Listings
+- Appointment Booking Form
+- Services and Health Packages
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Admin Panel:**
+- Secure Admin Login
+- Admin Dashboard with Quick Statistics
+- Management for Doctors, Departments, and Appointments (Expandable)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Tech Stack
+- **Frontend & Backend:** Next.js (App Router)
+- **Styling:** Vanilla CSS Modules (`.module.css`) with global variables
+- **Database:** MongoDB with Mongoose
+- **Authentication:** Custom JWT via HTTP-only Cookies
+- **Icons:** Lucide React
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup Instructions
 
-## Learn More
+1. **Install Dependencies**
+   Ensure you have Node.js installed, then run:
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Environment Variables**
+   The `.env.local` file is already created for you. Make sure MongoDB is running locally.
+   ```
+   MONGODB_URI=mongodb://localhost:27017/hospital_db
+   JWT_SECRET=super_secret_hospital_jwt_key_2026
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Database Seeding**
+   To populate the database with a Super Admin, sample doctors, departments, and services, run the seed script.
+   *(Note: Ensure your MongoDB server is running on `localhost:27017` before executing this script.)*
+   ```bash
+   node seed.js
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Run the Application**
+   Start the Next.js development server:
+   ```bash
+   npm run dev
+   ```
+   The application will be available at `http://localhost:3000`.
 
-## Deploy on Vercel
+## Default Admin Credentials (from Seed)
+- **Email:** admin@hospital.com
+- **Password:** admin123
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Access the admin panel at `http://localhost:3000/admin/login`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Folder Structure
+- `src/app/(public)` - The public-facing website pages and layout.
+- `src/app/(admin)` - The protected admin dashboard layout and pages.
+- `src/app/api` - Next.js Route Handlers (Backend API).
+- `src/components/layout` - Shared UI components (Navbar, Footer).
+- `src/models` - Mongoose database schemas.
+- `src/lib` - Utility functions (Database connection).
