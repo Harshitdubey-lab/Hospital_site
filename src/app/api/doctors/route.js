@@ -50,7 +50,8 @@ export async function GET(request) {
 
     return NextResponse.json(mapped);
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch doctors' }, { status: 500 });
+    console.error('API Error in /api/doctors:', error);
+    return NextResponse.json({ error: 'Failed to fetch doctors', details: error.message }, { status: 500 });
   }
 }
 

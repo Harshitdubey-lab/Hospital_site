@@ -16,17 +16,20 @@ export async function GET(request) {
       } catch (e) {}
     }
 
+    console.log('Fetching departments from DB...');
     const query = isAdmin ? {} : { status: 'Active' };
     const departments = await prisma.department.findMany({
       where: query,
       orderBy: { createdAt: 'desc' }
     });
+    console.log('Departments fetched:', departments.length);
     
     // Map _id for frontend compatibility during migration
     const mapped = departments.map(d => ({ ...d, _id: d.id }));
     return NextResponse.json(mapped);
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch departments' }, { status: 500 });
+    console.error('API Error in /api/departments:', error);
+    return NextResponse.json({ error: 'Failed to fetch departments', details: error.message }, { status: 500 });
   }
 }
 

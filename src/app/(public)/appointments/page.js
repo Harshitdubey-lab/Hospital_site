@@ -45,7 +45,7 @@ function AppointmentsContent() {
           setFilteredDoctors([doc]);
         }
       } else {
-        setFilteredDoctors(docs);
+        setFilteredDoctors(Array.isArray(docs) ? docs : []);
       }
     });
   }, [preSelectedDoctorId]);
