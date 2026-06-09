@@ -28,7 +28,7 @@ export async function POST(request) {
 
     const token = jwt.sign(
       { id: user.id, role: user.role },
-      process.env.JWT_SECRET,
+      process.env.JWT_SECRET || 'fallback_secret_for_development',
       { expiresIn: '1d' }
     );
 
@@ -50,6 +50,6 @@ export async function POST(request) {
     return response;
   } catch (error) {
     console.error('Login error:', error);
-    return NextResponse.json({ error: 'Server error' }, { status: 500 });
+    return NextResponse.json({ error: 'Server error', details: error.message }, { status: 500 });
   }
 }
